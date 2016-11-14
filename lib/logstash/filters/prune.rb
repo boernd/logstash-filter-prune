@@ -167,6 +167,8 @@ class LogStash::Filters::Prune < LogStash::Filters::Base
       end
     end
 
+    event.overwrite(LogStash::Event.new(hash))
+
     filter_matched(event)
   end # def filter
 end # class LogStash::Filters::Prune
